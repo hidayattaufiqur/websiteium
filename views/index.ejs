@@ -217,11 +217,10 @@
 
 
 
-
         <!-- Appointment Start -->
        <div class="container-xxl py-5">
            <div class="container">
-                <div id="alertContainer"></div>
+            <div id="alertContainer"></div>
                 <div class="bg-light rounded">
                     <div class="row g-0">
                         <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
@@ -410,6 +409,12 @@
 
     <!-- Template Javascript -->
     <script src="/public/js/main.js"></script>
+    <script>
+        if($('div#status').text()!='')
+        {
+                  alert($('div#status').text());
+        }
+  </script>
 </body>
 
 </html>

@@ -6,7 +6,6 @@ const FormKritik = formKritikSaranSchema;
 
 exports.registerHandler = async (req, res) => { 
     const fileFormulirPath = req.file.filename;
-    console.log(req.file)
 
     const { 
         namaOrangTua, emailOrangTua, nomorHpOrangTua, namaAnak,
@@ -20,7 +19,7 @@ exports.registerHandler = async (req, res) => {
     } catch (error) {
         console.error(error);
         HttpStatus.INTERNAL_SERVER_ERROR;
-      }
+    }
 };
 
 exports.kritikHandler = async (req, res) => { 
@@ -29,10 +28,17 @@ exports.kritikHandler = async (req, res) => {
         umurAnak, message
     } = req.body;
 
-    await FormKritik.create({ 
+    try { 
+        await FormKritik.create({ 
         namaOrangTua, emailOrangTua, namaAnak,
         umurAnak, message
     });
+
+    } catch (error) {
+        console.error(error);
+        HttpStatus.INTERNAL_SERVER_ERROR;
+    };
+    
 }
 
 
@@ -45,13 +51,13 @@ exports.dashboardHandler = async (req, res) => {
         const registrants = await Form.find().sort({ createdAt: -1 });
         
         res.render('dashboard', {
-          totalMessages,
-          totalRegistrants,
-          messages,
-          registrants
+            totalMessages,
+            totalRegistrants,
+            messages,
+            registrants
         });
-      } catch (error) {
+    } catch (error) {
         console.error(error);
-        res.status(500).send('Internal Server Error');
-      }
+        HttpStatus.INTERNAL_SERVER_ERROR;
+    }
 }

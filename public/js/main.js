@@ -80,7 +80,7 @@
 })(jQuery);
 
 function submitForm(event) {
-    event.preventDefault(); // Prevent the form from submitting normally
+    // event.preventDefault(); // Prevent the form from submitting normally
     
     const alertContainer = document.getElementById('alertContainer');
     alertContainer.innerHTML = `
@@ -90,13 +90,13 @@ function submitForm(event) {
       </div>
     `;
   
-    document.getElementById('namaOrangTua').value = '';
-    document.getElementById('emailOrangTua').value = '';
-    document.getElementById('nomorHpOrangTua').value = '';
-    document.getElementById('terimaBeasiswa').value = '';
-    document.getElementById('fileFormulir').value = '';
-    document.getElementById('namaAnak').value = '';
-    document.getElementById('umurAnak').value = '';
-    document.getElementById('message').value = '';
+    // document.getElementById('namaOrangTua').value = '';
+    // document.getElementById('emailOrangTua').value = '';
+    // document.getElementById('nomorHpOrangTua').value = '';
+    // document.getElementById('terimaBeasiswa').value = '';
+    // document.getElementById('fileFormulir').value = '';
+    // document.getElementById('namaAnak').value = '';
+    // document.getElementById('umurAnak').value = '';
+    // document.getElementById('message').value = '';
 }
   
