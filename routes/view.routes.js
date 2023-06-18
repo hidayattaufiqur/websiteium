@@ -21,6 +21,10 @@ function viewRoutes(expressApp) {
         res.render('../views/index');
     });
 
+    router.get('/', async(req, res) => { 
+        res.render('../views/index');
+    });
+
     router.get('/sejarah', async(req, res) => { 
         res.render('../views/about');
     });
