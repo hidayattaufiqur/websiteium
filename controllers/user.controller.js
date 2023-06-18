@@ -75,6 +75,6 @@ exports.logoutHandler = (_, res) => {
     
     return res
         .status(HttpStatus.OK)
-        .json({ statusCode: HttpStatus.OK, message: 'Logout Successfully!' });
+        .redirect('/');
 };
 
