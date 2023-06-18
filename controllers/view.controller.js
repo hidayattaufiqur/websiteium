@@ -35,6 +35,7 @@ exports.kritikHandler = async (req, res) => {
     });
 }
 
+
 exports.dashboardHandler = async (req, res) => { 
     try {
         const totalMessages = await FormKritik.countDocuments();
