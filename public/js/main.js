@@ -79,3 +79,24 @@
     
 })(jQuery);
 
+function submitForm(event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+    
+    const alertContainer = document.getElementById('alertContainer');
+    alertContainer.innerHTML = `
+      <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Submission successful!</strong> Your message has been sent.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    `;
+  
+    document.getElementById('namaOrangTua').value = '';
+    document.getElementById('emailOrangTua').value = '';
+    document.getElementById('nomorHpOrangTua').value = '';
+    document.getElementById('terimaBeasiswa').value = '';
+    document.getElementById('fileFormulir').value = '';
+    document.getElementById('namaAnak').value = '';
+    document.getElementById('umurAnak').value = '';
+    document.getElementById('message').value = '';
+}
+  

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Paud Aliyani</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="/public/img/favicon.svg" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Inter:wght@600&family=Lobster+Two:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/public/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="/public/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="/public/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container-xxl bg-white p-0">
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+            <!-- Navbar Start -->
+            <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
+              <a href="beranda" class="navbar-brand" style="display: flex; align-items: center;">
+                  <img src="/public/img/logo_paudaliyani.png" style="width: 100px">
+                  <h1 class="m-0 text-primary">Panel Dashboard</h1>
+              </a>
+              <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarCollapse">
+                  <div class="navbar-nav mx-auto">
+                      <a href="beranda" class="nav-item nav-link ">Beranda</a>
+                      <a href="sejarah" class="nav-item nav-link">Sejarah</a>
+                      <a href="visi_misi" class="nav-item nav-link">Visi & Misi</a>
+                      <a href="organisasi" class="nav-item nav-link ">Organisasi</a>
+                      <div class="nav-item dropdown">
+                          <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Galeri</a>
+                          <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
+                              <a href="guru" class="dropdown-item">Guru</a>
+                              <a href="kegiatan" class="dropdown-item">Kegiatan</a>
+                          </div>
+                      </div>
+                      <a href="contact" class="nav-item nav-link">Hubungi Kami</a>
+                  </div>
+                  <a class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Logged in</a>
+              </div>
+          </nav>
+          <!-- Navbar End -->
+          
+  
+
+  <div class="container py-5">
+    
+    <!-- Pendaftar -->
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h2>Total Pendaftar: <%= totalRegistrants %></h2>
+        </div>
+        <div class="card-body">
+          <% if (registrants.length > 0) { %>
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th class="w-15">Nama Orang Tua</th>
+                    <th class="w-15">Email Orang Tua</th>
+                    <th class="w-10">Nomor HP</th>
+                    <th class="w-15">Nama Anak</th>
+                    <th class="w-10">Umur Anak</th>
+                    <th class="w-15">Status Beasiswa</th>
+                    <th class="w-20">File Formulir</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% registrants.forEach(registrant => { %>
+                    <tr>
+                      <td><%= registrant.namaOrangTua %></td>
+                      <td><%= registrant.emailOrangTua %></td>
+                      <td><%= registrant.nomorHpOrangTua %></td>
+                      <td><%= registrant.namaAnak %></td>
+                      <td><%= registrant.umurAnak %></td>
+                      <td><%= registrant.terimaBeasiswa %></td>
+                      <td>
+                        <% if (registrant.fileFormulir) { %>
+                          <a href="/public/uploads/formPendaftaran/<%=registrant.fileFormulir %>" target="_blank" rel="noopener noreferrer" class="btn btn-primary">View File</a>
+                          <% } else { %>
+                            -
+                            <% } %>
+                          </td>
+                        </tr>
+                        <% }) %>
+                      </tbody>
+                    </table>
+                  </div>
+          <% } else { %>
+            <p>No registrants found.</p>
+            <% } %>
+          </div>
+      </div>
+      <!-- Pendaftar end -->
+
+      <!-- Pesan Kritik -->
+      <div class="row mt-4">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header">
+              <h2>Total Pesan Kritik dan Saran: <%= totalMessages %></h2>
+            </div>
+            <div class="card-body">
+              <% if (messages.length > 0) { %>
+                <div class="table-responsive">
+                  <table class="table table-striped">
+                    <thead>
+                      <tr>
+                        <th class="w-20">Nama Orang Tua</th>
+                        <th class="w-20">Email Orang Tua</th>
+                        <th class="w-20">Nama Anak</th>
+                        <th class="w-20">Umur Anak</th>
+                        <th class="w-20">Pesan</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                    <% messages.forEach(message => { %>
+                      <tr>
+                        <td><%= message.namaOrangTua %></td>
+                        <td><%= message.emailOrangTua %></td>
+                        <td><%= message.namaAnak %></td>
+                        <td><%= message.umurAnak %></td>
+                        <td><%= message.message %></td>
+                      </tr>
+                    <% }) %>
+                  </tbody>
+                </table>
+              </div>
+            <% } else { %>
+              <p>No messages found.</p>
+              <% } %>
+          </div>
+        </div>
+      </div>
+      <!-- Pesan Kritik end -->
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/public/lib/wow/wow.min.js"></script>
+<script src="/public/lib/easing/easing.min.js"></script>
+<script src="/public/lib/waypoints/waypoints.min.js"></script>
+<script src="/public/lib/owlcarousel/owl.carousel.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="/public/js/main.js"></script>
+
+</body>

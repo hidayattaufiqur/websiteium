@@ -44,7 +44,7 @@
 
         <!-- Navbar Start -->
         <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top px-4 px-lg-5 py-lg-0">
-            <a href="index.html" class="navbar-brand" style="display: flex; align-items: center;">
+            <a href="beranda" class="navbar-brand" style="display: flex; align-items: center;">
                 <img src="/public/img/logo_paudaliyani.png" style="width: 100px">
                 <h1 class="m-0 text-primary">Paud Aliyani</h1>
             </a>
@@ -53,20 +53,20 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav mx-auto">
-                    <a href="index.html" class="nav-item nav-link ">Beranda</a>
-                    <a href="about.html" class="nav-item nav-link">Sejarah</a>
-                    <a href="visi_misi.html" class="nav-item nav-link">Visi & Misi</a>
-                    <a href="organisasi.html" class="nav-item nav-link ">Organisasi</a>
+                    <a href="beranda" class="nav-item nav-link ">Beranda</a>
+                    <a href="sejarah" class="nav-item nav-link">Sejarah</a>
+                    <a href="visi_misi" class="nav-item nav-link">Visi & Misi</a>
+                    <a href="organisasi" class="nav-item nav-link active">Organisasi</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Galeri</a>
                         <div class="dropdown-menu rounded-0 rounded-bottom border-0 shadow-sm m-0">
-                            <a href="guru.html" class="dropdown-item">Guru</a>
-                            <a href="kegiatan.html" class="dropdown-item">Kegiatan</a>
+                            <a href="guru" class="dropdown-item">Guru</a>
+                            <a href="kegiatan" class="dropdown-item">Kegiatan</a>
                         </div>
                     </div>
-                    <a href="contact.html" class="nav-item nav-link">Hubungi Kami</a>
+                    <a href="contact" class="nav-item nav-link">Hubungi Kami</a>
                 </div>
-                <a href="login.html" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Login<i class="fa fa-arrow-right ms-3"></i></a>
+                <a href="login" class="btn btn-primary rounded-pill px-3 d-none d-lg-block">Login<i class="fa fa-arrow-right ms-3"></i></a>
             </div>
         </nav>
         <!-- Navbar End -->
@@ -76,51 +76,37 @@
         <!-- Page Header End -->
         <div class="container-xxl py-5 page-header position-relative mb-5">
             <div class="container py-5">
-                <h1 class="display-2 text-white animated slideInDown mb-4">Login</h1>
+                <h1 class="display-2 text-white animated slideInDown mb-4">Struktur Organisasi</h1>
                 <nav aria-label="breadcrumb animated slideInDown">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Beranda</a></li>
-                        <li class="breadcrumb-item text-white active" aria-current="page">Login</li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Organisasi</li>
                     </ol>
                 </nav>
             </div>
         </div>
         <!-- Page Header End -->
 
-<!-- Appointment Start -->
 
-<div class="container-xxl py-5 ">
-    <div class="container justify-content-center ">
-      <div class="row ">
-        <div class="col-md-6 offset-md-3 ">
-          <div class="card">
-            <div class="card-body">
-              <div class="text-center mb-4">
-                <h1 class="mb-3">Login</h1>
-                <p>Masukkan email dan password</p>
-              </div>
-              <form>
-                <div class="mb-3 form-floating">
-                  <label for="email" class="form-label border-0">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="Enter your email">
+        <!-- Classes Start -->
+        <div class="container-xxl py-5">
+            <div class="container justify-content-center">
+
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">Struktur Organisasi</h1>
+                    <p>Berikut adalah struktur organisasi di PAUD KB Aliyani</p>
+                </div> 
+
+                <div class="pdf-container text-center">
+                    <embed src="/public/struktur_organisasi.pdf" type="application/pdf" style="width: 65%; height: 1200px; border-radius: 30px; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); margin: 0 auto;" />
                 </div>
-                <div class="mb-3 form-floating">
-                  <label for="password" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="password" placeholder="Enter your password">
-                </div>
-                <div class="text-center">
-                    <button class="btn btn-primary w-100 py-3" type="submit">Login</button>
-                </div>
-              </form>
+
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  
-<!-- Appointment End -->
-        <!-- Footer Start -->
+        <!-- Classes End -->
+
+
+         <!-- Footer Start -->
         <div class="container-fluid bg-dark text-white-50 footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
                 <div class="row g-5">
@@ -137,10 +123,10 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h3 class="text-white mb-4">Quick Links</h3>
-                        <a class="btn btn-link text-white-50" href="about.html">Sejarah</a>
-                        <a class="btn btn-link text-white-50" href="visi_misi.html">Visi dan Misi</a>
-                        <a class="btn btn-link text-white-50" href="organisasi.html">Organisasi</a>
-                        <a class="btn btn-link text-white-50" href="contact.html">Hubungi Kami</a>
+                        <a class="btn btn-link text-white-50" href="sejarah">Sejarah</a>
+                        <a class="btn btn-link text-white-50" href="visi_misi">Visi dan Misi</a>
+                        <a class="btn btn-link text-white-50" href="organisasi">Organisasi</a>
+                        <a class="btn btn-link text-white-50" href="contact">Hubungi Kami</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h3 class="text-white mb-4">Galeri Foto</h3>
