@@ -52,13 +52,13 @@ exports.loginHandler = async (req, res) => {
     if (!user) {
         return res
         .status(HttpStatus.UNAUTHORIZED)
-        .render('../views/login');
+        .redirect('/login');
     }
     
     if (!(await user.matchPassword(password))) {
         return res
         .status(HttpStatus.UNAUTHORIZED)
-        .render('../views/login');
+        .redirect('/login');
     }
     
     const token = jwtService.signToken(user._id); 
